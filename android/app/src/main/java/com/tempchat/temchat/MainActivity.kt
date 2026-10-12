@@ -790,7 +790,7 @@ fun ChatScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.primary)
+                    .background(MaterialTheme.colorScheme.surface)
                     .padding(horizontal = 16.dp, vertical = 18.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
@@ -799,20 +799,20 @@ fun ChatScreen(
                     Text(
                         text = "TempChat",
                         style = MaterialTheme.typography.headlineMedium,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.onSurface
                     )
 
                     Text(
                         text = "Logged in as $currentUser",
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
 
                 TextButton(onClick = onLogout) {
                     Text(
                         "Logout",
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.primary
                     )
                 }
             }
@@ -1080,7 +1080,7 @@ fun ChatScreen(
                                         .fillMaxWidth()
                                         .padding(
                                             horizontal = 16.dp,
-                                            vertical = 12.dp
+                                            vertical = 14.dp
                                         ),
                                     verticalAlignment = Alignment.CenterVertically
                                 ) {
@@ -1139,7 +1139,7 @@ fun ChatScreen(
                                                         color = if (
                                                             onlineUsers.contains(user.loginId)
                                                         ) {
-                                                            MaterialTheme.colorScheme.primary
+                                                            androidx.compose.ui.graphics.Color(0xFF22C55E)
                                                         } else {
                                                             MaterialTheme.colorScheme.outline
                                                         },
@@ -1176,7 +1176,7 @@ fun ChatScreen(
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(MaterialTheme.colorScheme.primary)
+                    .background(MaterialTheme.colorScheme.surface)
                     .padding(horizontal = 8.dp, vertical = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -1190,7 +1190,7 @@ fun ChatScreen(
                     Text(
                         "‹",
                         style = MaterialTheme.typography.headlineMedium,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
 
@@ -1214,17 +1214,17 @@ fun ChatScreen(
                     Text(
                         text = receiver,
                         style = MaterialTheme.typography.titleMedium,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.onSurface
                     )
 
                     Text(
                         text = if (onlineUsers.contains(receiver)) {
                             "Online"
                         } else {
-                            connectionStatus
+                            "Offline"
                         },
                         style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onPrimary
+                        color = MaterialTheme.colorScheme.onSurface
                     )
                 }
 
@@ -1277,7 +1277,7 @@ fun ChatScreen(
                             } else {
                                 MaterialTheme.colorScheme.surfaceVariant
                             },
-                            modifier = Modifier.fillMaxWidth(0.82f)
+                            modifier = Modifier.fillMaxWidth(0.78f)
                         ) {
                             Column(
                                 modifier = Modifier.padding(
@@ -1295,14 +1295,7 @@ fun ChatScreen(
                                     }
                                 )
 
-                                if (chatMessage.timestamp.isNotBlank()) {
-                                    Text(
-                                        text = chatMessage.timestamp,
-                                        modifier = Modifier.align(Alignment.End),
-                                        style = MaterialTheme.typography.labelSmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
+
                             }
                         }
                     }
@@ -1325,7 +1318,9 @@ fun ChatScreen(
                     },
                     placeholder = { Text("Message") },
                     enabled = connectionStatus == "Connected",
-                    modifier = Modifier.weight(1f),
+                    modifier = Modifier
+                        .weight(1f)
+                        .padding(vertical = 2.dp),
                     shape = RoundedCornerShape(24.dp)
                 )
 
