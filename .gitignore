@@ -18,3 +18,4 @@ application-local.properties
 # OS files
 .DS_Store
 Thumbs.db
+backend/tempchat-server/.git-backup/

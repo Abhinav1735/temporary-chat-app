@@ -1,5 +1,0 @@
-0000000000000000000000000000000000000000 de3e8b20f46359d523a840cfc09eb6cdf223a2a7 Abhinav1735 <abhinavkumawat442@gmail.com> 1790934294 +0530	commit (initial): Initial backend implementation
-de3e8b20f46359d523a840cfc09eb6cdf223a2a7 0000000000000000000000000000000000000000 Abhinav1735 <abhinavkumawat442@gmail.com> 1790934325 +0530	Branch: renamed refs/heads/master to refs/heads/main
-0000000000000000000000000000000000000000 de3e8b20f46359d523a840cfc09eb6cdf223a2a7 Abhinav1735 <abhinavkumawat442@gmail.com> 1790934325 +0530	Branch: renamed refs/heads/master to refs/heads/main
-de3e8b20f46359d523a840cfc09eb6cdf223a2a7 e5c41061d045b7b4a0c008b4d416c9e96261115e Abhinav1735 <abhinavkumawat442@gmail.com> 1790942149 +0530	commit: Complete backend WebSocket chat with Redis
-e5c41061d045b7b4a0c008b4d416c9e96261115e faa9c898d9564fdae497ef55e070f1f995635600 Abhinav1735 <abhinavkumawat442@gmail.com> 1791820515 +0530	commit: Add chat contacts and update backend
